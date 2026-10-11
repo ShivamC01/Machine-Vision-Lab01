@@ -1,16 +1,13 @@
 # Lab Report — Lab 01: Efficient Separable Gaussian Convolution
 
-*Fill in each section below. Be specific — name the actual methods/parameters you used, since
-your report is graded alongside your code.*
-
 ## Overview
 
-_1 sentence: What was the goal of this lab?_
+The goal was to make Gaussian convolution faster by using separable 1D filters instead of a single 2D filter.
 
 ## Implementation
 
-_1-2 sentences: Briefly describe the steps you performed to implment efficient convolution._
+I created a normalized 1D Gaussian kernel and applied it horizontally and vertically using `sliding_window_view` and `tensordot`. I also handled image padding to preserve the output dimensions.
 
 ## Results
 
-_1-2 sentences: How well did your method perform vs the baseline in the pytests? ._
+The separable method reduced the number of calculations compared to the full 2D convolution baseline, making it more efficient. The implementation produced the expected output in the pytests.
